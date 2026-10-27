@@ -88,6 +88,39 @@ h2{font-weight:900;font-size:clamp(26px,3.6vw,38px);line-height:1.15;margin-bott
 .plan b{color:var(--navy)}
 .hidden{display:none!important}
 
+/* speaking demo */
+#konusma{background:#fff;padding-top:56px}
+.sp-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:560px;margin:0 auto 22px;text-align:center}
+.sp-steps div{background:#f4f6fb;border-radius:12px;padding:10px 6px;font-size:13px;font-weight:700;color:var(--muted)}
+.sp-steps b{display:block;font-size:20px;color:var(--navy)}
+.sp-lvl{display:inline-block;background:var(--navy);color:#fff;font-weight:900;border-radius:10px;padding:4px 12px;font-size:15px;margin-right:8px}
+.sp-title{font-size:22px;font-weight:800;margin:12px 0 4px}
+.sp-tr{color:var(--muted);font-size:15px;margin-bottom:14px}
+.sp-card{background:#0f2a5c;color:#fff;border-radius:16px;padding:18px 20px;font-size:20px;font-weight:700;line-height:1.4;margin-bottom:14px}
+.sp-points{background:#f4f6fb;border-radius:14px;padding:12px 16px 12px 34px;font-size:15.5px;margin-bottom:16px}
+.sp-points li{margin:3px 0}
+.sp-timer{display:flex;align-items:center;gap:14px;margin:6px 0 16px}
+.sp-clock{font-weight:900;font-size:38px;color:var(--navy);min-width:86px;font-variant-numeric:tabular-nums}
+.sp-state{font-weight:700;font-size:15px;color:var(--muted)}
+.sp-state.rec{color:var(--red)}
+.sp-state.rec:before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--red);margin-right:7px;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.2}}
+.sp-tbar{flex:1;height:10px;background:#e6eaf3;border-radius:99px;overflow:hidden}
+.sp-tbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--red))}
+.sp-btns{display:flex;flex-wrap:wrap;gap:10px}
+.sp-review audio{width:100%;margin:6px 0 12px}
+.sp-checks{display:grid;gap:8px;margin:10px 0 14px}
+.sp-checks label{display:flex;gap:10px;align-items:flex-start;background:#f4f6fb;border:2px solid #e1e6f0;border-radius:12px;padding:11px 14px;font-weight:600;font-size:15.5px;cursor:pointer}
+.sp-checks input{width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--navy)}
+.sp-model{background:#fff8e0;border:2px solid var(--gold);border-radius:14px;padding:12px 16px;font-size:15.5px;margin-bottom:14px}
+.sp-note{font-size:13.5px;color:var(--muted);margin:8px 0}
+.sp-compare{display:flex;justify-content:center;gap:14px;margin:6px 0 14px;flex-wrap:wrap}
+.sp-compare div{background:#f4f6fb;border-radius:14px;padding:10px 18px;font-weight:700;color:var(--muted);font-size:14px}
+.sp-compare b{display:block;font-size:28px;color:var(--navy);font-weight:900}
+.sp-dl{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 4px}
+.sp-dl a{font-weight:700;font-size:14px;color:var(--navy);background:#eef2fb;border-radius:10px;padding:8px 12px;text-decoration:none}
+@media (max-width:820px){.sp-card{font-size:18px}.sp-steps{gap:6px}}
+
 /* cards */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .card{background:var(--card);border-radius:18px;padding:24px;box-shadow:0 8px 30px rgba(15,42,92,.07);border-top:6px solid var(--navy)}
@@ -147,7 +180,7 @@ footer b{color:#fff}
   <div class="wrap">
     <div class="nav">
       <div class="logo">Samuel <span>İngilizce</span></div>
-      <a class="small" href="#fiyatlar">Fiyatlar</a>
+      <div style="display:flex;gap:18px"><a class="small" href="#konusma">🎙️ Konuşma testi</a><a class="small" href="#fiyatlar">Fiyatlar</a></div>
     </div>
     <div class="hero">
       <div>
@@ -218,7 +251,74 @@ footer b{color:#fff}
         <div class="plan" id="rplan"></div>
         <a class="btn btn-wa js-wa-result" href="#" data-track="wa_result"><svg class="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg>Sonucumu gönder + ücretsiz deneme dersi al</a>
         <p class="privacy">Butona basınca WhatsApp açılır ve sonucunuz hazır mesaj olarak gelir — sadece "Gönder"e basın.</p>
-        <p style="margin-top:14px"><button class="linkbtn" id="again">Testi tekrar çöz</button></p>
+        <p style="margin-top:14px"><a class="btn btn-gold" href="#konusma" data-track="to_speaking">🎙️ Şimdi konuşmanı test et →</a></p>
+        <p style="margin-top:6px"><button class="linkbtn" id="again">Testi tekrar çöz</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="konusma">
+  <div class="wrap">
+    <div class="quiz">
+      <!-- speaking: start -->
+      <div id="sp-start" class="start">
+        <div class="big">🎙️</div>
+        <h2>Konuşma Testi <span style="color:var(--red)">(Demo)</span></h2>
+        <p class="sub" style="margin:0 auto 18px">Dilbilgisini bilmek, konuşabilmek demek değil. 4 kısa görevle konuşma seviyeni A1'den B2'ye kadar dene. Yaklaşık 5 dakika.</p>
+        <div class="sp-steps">
+          <div><b>A1</b>Kendini tanıt</div><div><b>A2</b>Geçen hafta sonu</div>
+          <div><b>B1</b>Fikrini savun</div><div><b>B2</b>Tartış</div>
+        </div>
+        <button class="btn btn-navy" id="sp-go">Konuşma testini başlat →</button>
+        <p class="privacy">🔒 Sesiniz yalnızca kendi cihazınızda kaydedilir, hiçbir yere yüklenmez. Mikrofon izni vermezseniz kayıt olmadan da yapabilirsiniz.</p>
+      </div>
+
+      <!-- speaking: task -->
+      <div id="sp-task" class="hidden">
+        <div class="qtop"><span id="sp-num">Görev 1 / 4</span><span id="sp-time-label"></span></div>
+        <div class="bar"><i id="sp-bar"></i></div>
+        <div><span class="sp-lvl" id="sp-lvl">A1</span><span class="sp-title" id="sp-title"></span></div>
+        <p class="sp-tr" id="sp-tr"></p>
+        <div class="sp-card" id="sp-prompt"></div>
+        <ul class="sp-points" id="sp-points"></ul>
+
+        <div id="sp-run">
+          <div class="sp-timer"><div class="sp-clock" id="sp-clock">0:30</div><div style="flex:1"><div class="sp-state" id="sp-state">Hazır olduğunda başla</div><div class="sp-tbar" style="margin-top:8px"><i id="sp-tbar"></i></div></div></div>
+          <div class="sp-btns">
+            <button class="btn btn-navy" id="sp-rec">🎙️ Konuşmaya başla</button>
+            <button class="btn btn-gold hidden" id="sp-stop">■ Bitirdim</button>
+          </div>
+          <p class="sp-note" id="sp-micnote"></p>
+        </div>
+
+        <div id="sp-review" class="sp-review hidden">
+          <div id="sp-audio-wrap"><p style="font-weight:700">Kendini dinle:</p><audio id="sp-audio" controls></audio></div>
+          <p style="font-weight:800;margin-top:6px">Dürüstçe işaretle: bunları yapabildin mi?</p>
+          <div class="sp-checks" id="sp-checks"></div>
+          <button class="linkbtn" id="sp-showmodel" style="padding-left:0">💡 Örnek cevabı göster</button>
+          <div class="sp-model hidden" id="sp-model"></div>
+          <div class="qnav" style="margin-top:8px">
+            <button class="linkbtn" id="sp-retry">↺ Tekrar dene</button>
+            <button class="btn btn-navy" id="sp-next">Sonraki görev →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- speaking: result -->
+      <div id="sp-result" class="result hidden">
+        <p style="font-weight:700;color:var(--muted)">Tahmini konuşma seviyeniz</p>
+        <div class="lvl" id="sp-rlvl">A2</div>
+        <div class="lvlname" id="sp-rname"></div>
+        <div class="sp-compare hidden" id="sp-compare"></div>
+        <p class="rdesc" id="sp-rdesc"></p>
+        <div class="plan" id="sp-rplan"></div>
+        <a class="btn btn-wa" id="sp-wa" href="#" data-track="wa_speaking"><svg class="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.2 1.4 2.5 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg>Sonucumu gönder + ücretsiz geri bildirim al</a>
+        <div id="sp-dlbox" class="hidden">
+          <p class="sp-note" style="margin-top:16px"><b>Ücretsiz geri bildirim:</b> kayıtlarını indir ve WhatsApp'ta bana gönder — telaffuz ve hatalarınla ilgili kısa, kişisel bir sesli not göndereyim.</p>
+          <div class="sp-dl" id="sp-dl"></div>
+        </div>
+        <p style="margin-top:14px"><button class="linkbtn" id="sp-again">Konuşma testini tekrar yap</button></p>
       </div>
     </div>
   </div>
@@ -387,6 +487,7 @@ function finish(){
   var byTotal = total>=17?"C1":total>=13?"B2":total>=9?"B1":total>=5?"A2":"A1";
   if (order.indexOf(byTotal) > order.indexOf(lvl)) lvl = order[Math.min(order.indexOf(lvl)+1, order.indexOf(byTotal))];
   var L = LV[lvl], name = ($('name').value||"").trim(), goal = $('goal').value;
+  grammarResult = {lvl: lvl, total: total};
   $('rlvl').textContent = lvl; $('rname').textContent = L.n;
   $('rscore').textContent = total + " / " + Q.length + " doğru";
   $('rdesc').textContent = L.d; $('rplan').innerHTML = L.p;
@@ -397,6 +498,158 @@ function finish(){
   a.onclick = function(){ track('wa_result', {level: lvl}); if(window.fbq) fbq('track','Lead', {content_name: lvl}); };
   show('s-r'); track('test_complete', {level: lvl, score: total});
   $('test').scrollIntoView({behavior:'smooth'});
+}
+
+/* ---- speaking demo: 1 task per level, A1 → B2. Audio never leaves the device. ---- */
+var grammarResult = null;
+var SP = [
+ {l:"A1", t:"Kendini tanıt", tr:"30 saniye boyunca kendini İngilizce tanıt.", prep:0, sec:30,
+  p:"Tell me about yourself.",
+  pts:["your name and age","where you live","your job or school","one thing you like"],
+  c:["En az 4 cümle kurdum","Adımı, yaşımı, şehrimi ve işimi/okulumu söyledim","Türkçe kelime kullanmadan konuştum"],
+  m:"Hi, my name is Ayşe. I'm 28 years old. I live in Antalya, in Konyaaltı. I'm a nurse at a hospital. I like walking by the sea and I love coffee."},
+ {l:"A2", t:"Geçen hafta sonu", tr:"Geçen hafta sonu ne yaptığını anlat. Geçmiş zaman kullan.", prep:10, sec:45,
+  p:"What did you do last weekend?",
+  pts:["where you went","who you were with","what you did","did you enjoy it? why?"],
+  c:["Geçmiş zaman kullandım (went, saw, ate, was…)","En az 5 cümle kurdum","Nerede, kiminle ve ne yaptığımı anlattım"],
+  m:"Last Saturday I went to Kaleiçi with my sister. We walked around the old town and we ate lunch in a small fish restaurant. In the evening we watched a film at home. I enjoyed it because it was sunny and relaxing."},
+ {l:"B1", t:"Fikrini söyle ve savun", tr:"Fikrini söyle, en az iki sebep ve kendi hayatından bir örnek ver.", prep:15, sec:60,
+  p:"Is it better to live in a big city or a small town? Why?",
+  pts:["your opinion","two reasons (because…, also…)","an example from your own life","a short conclusion"],
+  c:["Görüşümü söyleyip en az 2 sebep verdim","Kendi hayatımdan bir örnek verdim","1 dakika boyunca uzun duraksamadan konuştum"],
+  m:"In my opinion, a small town is better for families. First, it's safer and quieter, so children can play outside. Also, life is cheaper, especially rent. For example, when I moved from Istanbul to Antalya, I started to spend much less time in traffic. Of course big cities have more jobs, but for me, quality of life is more important."},
+ {l:"B2", t:"Tartış", tr:"Her iki tarafı tartış, kendi görüşünü açıkla ve bir sonuca bağla.", prep:20, sec:60,
+  p:"\"Smartphones have made our lives worse.\" To what extent do you agree?",
+  pts:["arguments for and against","your own position","linking words (however, although, as a result)","a clear conclusion"],
+  c:["Her iki tarafı da tartıştım","Bağlaçlar ve zengin kelimeler kullandım (although, however, as a result…)","Görüşümü toparlayan bir sonuç cümlesi söyledim"],
+  m:"I partly agree. On the one hand, smartphones have made us more distracted; many people check their phones even during dinner, and this affects real conversations. On the other hand, they have made life much easier — banking, maps, staying in touch with family abroad. So, in my view, the problem isn't the phone itself but how we use it. As a result, I think we need better habits rather than fewer phones."}
+];
+var SLV = {
+ pre:{d:"Pre-A1", n:"İlk adım", t:"Henüz akıcı cümle kurmak zor geliyor — bu çok normal ve en hızlı ilerlemenin olduğu nokta. Doğru kalıplarla birkaç derste kendinizi rahatça tanıtabilirsiniz.", p:"<b>Önerim:</b> Haftada 2 kısa ders: hazır cümle kalıpları + her derste bol tekrar. Hedef: 4 derste kendinizi 1 dakika tanıtmak."},
+ A1:{d:"A1", n:"Başlangıç", t:"Kendinizi basit cümlelerle tanıtabiliyorsunuz. Şimdi sıra zamanları konuşurken kullanmakta: dün ne yaptınız, yarın ne yapacaksınız.", p:"<b>Önerim:</b> Konuşma odaklı dersler: geçmiş zaman, günlük rutin ve soru sorma. Her derste gerçek hayat rol yapmaları."},
+ A2:{d:"A2", n:"Temel", t:"Geçmişte olanları anlatabiliyorsunuz. Bir sonraki adım: fikrinizi söyleyip gerekçelendirmek ve daha uzun konuşmak.", p:"<b>Önerim:</b> Fikir bildirme kalıpları (In my opinion, because, for example) ve 1 dakikalık konuşma alıştırmaları."},
+ B1:{d:"B1", n:"Orta", t:"Fikrinizi gerekçeleriyle savunabiliyorsunuz — bu iş ve seyahat için güçlü bir seviye. Fark yaratacak olan: bağlaçlar, doğal ifadeler ve akıcılık.", p:"<b>Önerim:</b> Tartışma ve rol yapma dersleri, sık yapılan hataların düzeltilmesi; hedefinize göre iş İngilizcesi veya IELTS Speaking."},
+ B2:{d:"B2", n:"Orta-üstü", t:"Bir konuyu iki yönüyle tartışıp sonuca bağlayabiliyorsunuz. Bu seviyede hedef: doğallık, telaffuz ve sınavlarda yüksek bantlar.", p:"<b>Önerim:</b> İleri konuşma, toplantı/mülakat simülasyonları veya IELTS Speaking 7+ çalışması."}
+};
+var spCur = 0, spChecks = [], spBlobs = [], spStream = null, spNoMic = false, spRec = null, spChunks = [], spTimer = null, spPhase = "idle", spEnd = 0, spLen = 0;
+var spMime = (function(){ if(!window.MediaRecorder||!MediaRecorder.isTypeSupported) return ""; var c=["audio/webm;codecs=opus","audio/webm","audio/mp4","audio/ogg"]; for(var i=0;i<c.length;i++) if(MediaRecorder.isTypeSupported(c[i])) return c[i]; return ""; })();
+function spShow(id){ ["sp-start","sp-task","sp-result"].forEach(function(s){ $(s).classList.toggle('hidden', s!==id); }); }
+function fmt(s){ s=Math.max(0,Math.ceil(s)); return Math.floor(s/60)+":"+("0"+(s%60)).slice(-2); }
+
+function spRender(){
+  var it = SP[spCur];
+  $('sp-num').textContent = "Görev " + (spCur+1) + " / " + SP.length;
+  $('sp-time-label').textContent = (it.prep ? it.prep + " sn hazırlık · " : "") + it.sec + " sn konuşma";
+  $('sp-bar').style.width = (spCur / SP.length * 100) + "%";
+  $('sp-lvl').textContent = it.l; $('sp-title').textContent = it.t; $('sp-tr').textContent = it.tr;
+  $('sp-prompt').textContent = it.p;
+  $('sp-points').innerHTML = it.pts.map(function(x){ return "<li>" + x + "</li>"; }).join("");
+  $('sp-clock').textContent = fmt(it.prep || it.sec); $('sp-tbar').style.width = "0";
+  $('sp-state').textContent = "Hazır olduğunda başla"; $('sp-state').className = "sp-state";
+  $('sp-rec').classList.remove('hidden'); $('sp-stop').classList.add('hidden');
+  $('sp-run').classList.remove('hidden'); $('sp-review').classList.add('hidden');
+  $('sp-micnote').textContent = spNoMic ? "Mikrofon kullanılamıyor — kayıt olmadan sesli konuş, süre yine işler." : "";
+  $('sp-model').classList.add('hidden'); $('sp-model').textContent = it.m;
+}
+
+function spGetMic(){
+  if (spStream || spNoMic) return Promise.resolve();
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !window.MediaRecorder) { spNoMic = true; return Promise.resolve(); }
+  return navigator.mediaDevices.getUserMedia({audio:true}).then(function(s){ spStream = s; }).catch(function(){ spNoMic = true; });
+}
+function spTick(){
+  var left = (spEnd - Date.now()) / 1000;
+  $('sp-clock').textContent = fmt(left);
+  $('sp-tbar').style.width = Math.min(100, (1 - left / spLen) * 100) + "%";
+  if (left <= 0) { if (spPhase === "prep") spSpeak(); else spFinishTask(); }
+}
+function spStartTimer(sec){ spLen = sec; spEnd = Date.now() + sec*1000; clearInterval(spTimer); spTimer = setInterval(spTick, 200); spTick(); }
+function spPrep(){
+  spPhase = "prep";
+  $('sp-state').textContent = "Hazırlan — ne söyleyeceğini düşün"; $('sp-state').className = "sp-state";
+  $('sp-stop').textContent = "Hazırım, başla →";
+  spStartTimer(SP[spCur].prep);
+}
+function spSpeak(){
+  spPhase = "speak"; spChunks = [];
+  if (spStream) {
+    try {
+      spRec = spMime ? new MediaRecorder(spStream, {mimeType: spMime}) : new MediaRecorder(spStream);
+      spRec.ondataavailable = function(e){ if (e.data && e.data.size) spChunks.push(e.data); };
+      spRec.start();
+    } catch(e) { spRec = null; }
+  }
+  $('sp-state').textContent = spRec ? "Kaydediliyor — konuş!" : "Konuş!"; $('sp-state').className = "sp-state" + (spRec ? " rec" : "");
+  $('sp-stop').textContent = "■ Bitirdim";
+  spStartTimer(SP[spCur].sec);
+}
+function spFinishTask(){
+  clearInterval(spTimer); spPhase = "idle";
+  var done = function(){
+    var b = spChunks.length ? new Blob(spChunks, {type: (spRec && spRec.mimeType) || spMime || "audio/webm"}) : null;
+    spBlobs[spCur] = b; spRec = null;
+    $('sp-audio-wrap').classList.toggle('hidden', !b);
+    if (b) $('sp-audio').src = URL.createObjectURL(b);
+    var it = SP[spCur], prev = spChecks[spCur] || [];
+    $('sp-checks').innerHTML = it.c.map(function(x,i){ return '<label><input type="checkbox" data-i="'+i+'"'+(prev[i]?' checked':'')+'>'+x+'</label>'; }).join("");
+    $('sp-next').textContent = spCur < SP.length-1 ? "Sonraki görev →" : "Sonucumu gör →";
+    $('sp-run').classList.add('hidden'); $('sp-review').classList.remove('hidden');
+    track('speak_task_done', {level: it.l, recorded: !!b});
+  };
+  if (spRec && spRec.state !== "inactive") { spRec.onstop = done; spRec.stop(); } else done();
+}
+$('sp-go').onclick = function(){
+  spCur = 0; spChecks = []; spBlobs = [];
+  spShow('sp-task'); spRender(); track('speak_start');
+  $('konusma').scrollIntoView({behavior:'smooth'});
+};
+$('sp-rec').onclick = function(){
+  $('sp-rec').classList.add('hidden'); $('sp-stop').classList.remove('hidden');
+  $('sp-state').textContent = "Mikrofon açılıyor…";
+  spGetMic().then(function(){
+    $('sp-micnote').textContent = spNoMic ? "Mikrofon kullanılamıyor — kayıt olmadan sesli konuş, süre yine işler." : "";
+    if (SP[spCur].prep) spPrep(); else spSpeak();
+  });
+};
+$('sp-stop').onclick = function(){ if (spPhase === "prep") spSpeak(); else if (spPhase === "speak") spFinishTask(); };
+$('sp-showmodel').onclick = function(){ $('sp-model').classList.toggle('hidden'); };
+$('sp-retry').onclick = function(){ spRender(); };
+$('sp-next').onclick = function(){
+  spChecks[spCur] = Array.prototype.map.call($('sp-checks').querySelectorAll('input'), function(x){ return x.checked; });
+  if (spCur < SP.length-1) { spCur++; spRender(); $('konusma').scrollIntoView({behavior:'smooth'}); } else spResult();
+};
+$('sp-again').onclick = function(){ spShow('sp-start'); };
+
+function spResult(){
+  var order2 = ["A1","A2","B1","B2"], lvl = "pre";
+  for (var k=0;k<SP.length;k++){ var n = (spChecks[k]||[]).filter(Boolean).length; if (n >= 2) lvl = order2[k]; else break; }
+  var L = SLV[lvl];
+  $('sp-rlvl').textContent = L.d; $('sp-rname').textContent = L.n;
+  $('sp-rdesc').textContent = L.t; $('sp-rplan').innerHTML = L.p;
+  var cmp = $('sp-compare');
+  if (grammarResult) {
+    cmp.innerHTML = "<div><b>" + grammarResult.lvl + "</b>Dilbilgisi testi</div><div><b>" + L.d + "</b>Konuşma</div>";
+    cmp.classList.remove('hidden');
+    var gi = ["A1","A2","B1","B2","C1"].indexOf(grammarResult.lvl), si = lvl === "pre" ? -1 : order2.indexOf(lvl);
+    if (si < gi) $('sp-rdesc').textContent = L.t + " Dilbilgisi seviyeniz konuşmanızdan yüksek — Türkiye'deki öğrencilerin çoğunda durum böyle. Bilginiz var; eksik olan pratik. Derslerin asıl hedefi bu farkı kapatmak.";
+  } else cmp.classList.add('hidden');
+  var name = ($('name').value||"").trim();
+  var msg = "Merhaba Samuel" + (name ? ", ben " + name : "") + ". Konuşma testini yaptım: tahmini konuşma seviyem " + L.d + " (" + L.n + ")" +
+            (grammarResult ? ", dilbilgisi testinde " + grammarResult.lvl : "") + ". Ücretsiz deneme dersi ve konuşmam için geri bildirim almak istiyorum.";
+  var a = $('sp-wa'); a.href = waLink(msg); a.target = "_blank"; a.rel = "noopener";
+  a.onclick = function(){ track('wa_speaking', {level: L.d}); if(window.fbq) fbq('track','Lead', {content_name: "speaking " + L.d}); };
+  var dl = $('sp-dl'); dl.innerHTML = "";
+  spBlobs.forEach(function(b,i){
+    if (!b) return;
+    var ext = /mp4/.test(b.type) ? "m4a" : /ogg/.test(b.type) ? "ogg" : "webm";
+    var x = document.createElement('a'); x.href = URL.createObjectURL(b); x.download = "konusma-" + SP[i].l + "." + ext;
+    x.textContent = "⬇ " + SP[i].l + " kaydı"; dl.appendChild(x);
+  });
+  $('sp-dlbox').classList.toggle('hidden', !dl.children.length);
+  if (spStream) { spStream.getTracks().forEach(function(t){ t.stop(); }); spStream = null; }
+  $('sp-bar').style.width = "100%";
+  spShow('sp-result'); track('speak_complete', {level: L.d});
+  $('konusma').scrollIntoView({behavior:'smooth'});
 }
 </script>
 </body>
