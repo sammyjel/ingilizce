@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://sammyjel.github.io/ingilizce/sitemap.xml
